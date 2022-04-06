@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package videos_api;
+
+service VideoService {
+    rpc Get(GetVideoRequest) returns (GetVideoResponse);
+}
+
+message GetVideoRequest {
+    int32 id = 1;
+}
+
+message GetVideoResponse {
+    Video video = 1;
+}
+
+message Video {
+    int32 id = 1;
+    string title = 2;
+    string description = 3;
+}
